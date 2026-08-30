@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistente de Estudos — Concursos</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <nav class="sidebar">
+    <h1>📚 Assistente</h1>
+    <button class="nav-btn active" data-view="dashboard">Painel</button>
+    <button class="nav-btn" data-view="disciplinas">Edital / Disciplinas</button>
+    <button class="nav-btn" data-view="cronograma">Cronograma</button>
+    <button class="nav-btn" data-view="flashcards">Flashcards</button>
+    <button class="nav-btn" data-view="simulados">Simulados</button>
+    <button class="nav-btn" data-view="config">Backup</button>
+  </nav>
+
+  <main class="content">
+
+    <section id="view-dashboard" class="view active">
+      <h2>Painel</h2>
+      <div class="cards-grid" id="dashboard-stats"></div>
+      <div class="dashboard-columns">
+        <div class="panel">
+          <h3>Revisões de hoje</h3>
+          <div id="dashboard-revisoes"></div>
+        </div>
+        <div class="panel">
+          <h3>Cronograma de hoje</h3>
+          <div id="dashboard-cronograma-hoje"></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Progresso por disciplina</h3>
+        <div id="dashboard-progresso"></div>
+      </div>
+    </section>
+
+    <section id="view-disciplinas" class="view">
+      <h2>Edital / Disciplinas</h2>
+      <form id="form-disciplina" class="inline-form">
+        <input type="text" id="input-disciplina-nome" placeholder="Nome da disciplina (ex: Direito Constitucional)" required>
+        <input type="color" id="input-disciplina-cor" value="#4f8ef7" title="Cor">
+        <button type="submit">Adicionar disciplina</button>
+      </form>
+      <div id="lista-disciplinas"></div>
+    </section>
+
+    <section id="view-cronograma" class="view">
+      <h2>Cronograma semanal</h2>
+      <form id="form-evento" class="inline-form">
+        <select id="input-evento-dia">
+          <option value="0">Segunda</option>
+          <option value="1">Terça</option>
+          <option value="2">Quarta</option>
+          <option value="3">Quinta</option>
+          <option value="4">Sexta</option>
+          <option value="5">Sábado</option>
+          <option value="6">Domingo</option>
+        </select>
+        <input type="time" id="input-evento-hora" required>
+        <select id="input-evento-disciplina"></select>
+        <input type="text" id="input-evento-topico" placeholder="Tópico / atividade">
+        <button type="submit">Adicionar</button>
+      </form>
+      <div id="grade-cronograma" class="grade-cronograma"></div>
+    </section>
+
+    <section id="view-flashcards" class="view">
+      <h2>Flashcards (repetição espaçada)</h2>
+      <div class="tabs-inner">
+        <button class="tab-btn active" data-tab="revisar">Revisar</button>
+        <button class="tab-btn" data-tab="gerenciar">Gerenciar</button>
+      </div>
+
+      <div id="flash-revisar" class="tab-pane active">
+        <div id="flash-revisar-area"></div>
+      </div>
+
+      <div id="flash-gerenciar" class="tab-pane">
+        <form id="form-flashcard" class="inline-form">
+          <select id="input-flash-disciplina"></select>
+          <input type="text" id="input-flash-frente" placeholder="Frente (pergunta)" required>
+          <input type="text" id="input-flash-verso" placeholder="Verso (resposta)" required>
+          <button type="submit">Adicionar card</button>
+        </form>
+        <div id="lista-flashcards"></div>
+      </div>
+    </section>
+
+    <section id="view-simulados" class="view">
+      <h2>Simulados e questões</h2>
+      <form id="form-simulado" class="inline-form">
+        <input type="text" id="input-simulado-nome" placeholder="Nome do simulado" required>
+        <select id="input-simulado-disciplina"></select>
+        <input type="number" id="input-simulado-acertos" placeholder="Acertos" min="0" required>
+        <input type="number" id="input-simulado-total" placeholder="Total de questões" min="1" required>
+        <button type="submit">Registrar</button>
+      </form>
+      <div id="lista-simulados"></div>
+    </section>
+
+    <section id="view-config" class="view">
+      <h2>Backup dos dados</h2>
+      <p>Todos os dados ficam salvos no navegador (localStorage). Use os botões abaixo para exportar um backup em JSON ou importar um backup salvo anteriormente.</p>
+      <div class="btn-row">
+        <button id="btn-exportar">Exportar backup (.json)</button>
+        <label class="btn-file">
+          Importar backup
+          <input type="file" id="input-importar" accept="application/json" hidden>
+        </label>
+        <button id="btn-limpar" class="btn-danger">Apagar todos os dados</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/disciplinas.js"></script>
+<script src="js/cronograma.js"></script>
+<script src="js/flashcards.js"></script>
+<script src="js/simulados.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
