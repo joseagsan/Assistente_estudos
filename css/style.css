@@ -221,6 +221,39 @@ button:hover { background: var(--primary-dark); }
 }
 .icon-btn:hover { color: var(--danger); background: transparent; }
 
+.edital-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.preview-disciplina {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: var(--bg);
+}
+.preview-disciplina__head { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+.preview-nome { flex: 1; font-weight: 600; padding: 7px 9px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; }
+.preview-count { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.preview-topicos { display: flex; flex-direction: column; gap: 6px; padding-left: 25px; }
+.preview-topico { display: flex; align-items: center; gap: 8px; }
+.preview-topico input[type="text"] { flex: 1; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; }
+
+.plano-dias { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.plano-dia-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
+.plano-dia-row.is-off { opacity: .55; }
+.plano-dia-row .check { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.plano-dia-row input[type="number"] { width: 52px; padding: 5px 6px; border: 1px solid var(--border); border-radius: 6px; font-size: 12.5px; }
+.plano-config-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 14px; }
+.plano-config-row label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.plano-config-row input[type="time"], .plano-config-row input[type="date"] { padding: 7px 9px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 13px; }
+
 .grade-cronograma {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

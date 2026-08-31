@@ -16,11 +16,20 @@ function renderDashboard() {
       )
     : null;
 
+  const dataProva = DADOS.planoConfig && DADOS.planoConfig.dataProva;
+  let diasRestantes = null;
+  if (dataProva) {
+    const hoje = new Date(hojeISO() + "T00:00:00");
+    const alvo = new Date(dataProva + "T00:00:00");
+    diasRestantes = Math.ceil((alvo - hoje) / 86400000);
+  }
+
   document.getElementById("dashboard-stats").innerHTML = `
     <div class="stat-card"><div class="num">${DADOS.disciplinas.length}</div><div class="label">Disciplinas</div></div>
     <div class="stat-card"><div class="num">${topicosDominados}/${totalTopicos}</div><div class="label">Tópicos dominados</div></div>
     <div class="stat-card"><div class="num">${cardsHoje}</div><div class="label">Flashcards p/ hoje</div></div>
     <div class="stat-card"><div class="num">${mediaSimulados !== null ? mediaSimulados + "%" : "—"}</div><div class="label">Média em simulados</div></div>
+    ${dataProva ? `<div class="stat-card"><div class="num">${diasRestantes}</div><div class="label">Dias até a prova</div></div>` : ""}
   `;
 
   const revisoesDiv = document.getElementById("dashboard-revisoes");

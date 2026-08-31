@@ -41,6 +41,17 @@
 
     <section id="view-disciplinas" class="view">
       <h2>Edital / Disciplinas</h2>
+
+      <div class="panel">
+        <h3>Importar do edital</h3>
+        <p class="empty-state" style="padding:0 0 10px;">Cole abaixo o conteúdo programático do edital. O app tenta reconhecer as disciplinas e os tópicos automaticamente — revise antes de importar.</p>
+        <textarea id="input-edital-texto" class="edital-textarea" rows="6" placeholder="Ex: LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de texto. 2 Ortografia oficial...&#10;RACIOCÍNIO LÓGICO: 1 Estruturas lógicas. 2 Proposições..."></textarea>
+        <div class="btn-row" style="margin-top:10px;">
+          <button id="btn-analisar-edital">Analisar edital</button>
+        </div>
+        <div id="preview-edital"></div>
+      </div>
+
       <form id="form-disciplina" class="inline-form">
         <input type="text" id="input-disciplina-nome" placeholder="Nome da disciplina (ex: Direito Constitucional)" required>
         <input type="color" id="input-disciplina-cor" value="#4f8ef7" title="Cor">
@@ -51,6 +62,18 @@
 
     <section id="view-cronograma" class="view">
       <h2>Cronograma semanal</h2>
+
+      <div class="panel">
+        <h3>Gerar plano automático</h3>
+        <p class="empty-state" style="padding:0 0 10px;">Escolha os dias e quantas sessões de estudo você tem em cada um. O plano distribui as disciplinas priorizando o que ainda falta estudar.</p>
+        <div id="plano-dias" class="plano-dias"></div>
+        <div class="plano-config-row">
+          <label>Horário inicial<input type="time" id="input-plano-hora-inicial"></label>
+          <label>Data da prova<input type="date" id="input-data-prova"></label>
+          <button id="btn-gerar-plano">Gerar cronograma</button>
+        </div>
+      </div>
+
       <form id="form-evento" class="inline-form">
         <select id="input-evento-dia">
           <option value="0">Segunda</option>

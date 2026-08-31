@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   inicializarDisciplinas();
+  inicializarImportadorEdital();
   inicializarCronograma();
+  inicializarPlanoAutomatico();
   inicializarFlashcards();
   inicializarSimulados();
   inicializarConfig();
