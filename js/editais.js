@@ -133,9 +133,39 @@ function renderEditaisLista() {
     .join("");
 }
 
+const SITES_BUSCA_VIVA = {
+  google: null,
+  jcconcursos: "jcconcursos.com.br",
+  pciconcursos: "pciconcursos.com.br",
+  folhadirigida: "folha.qconcursos.com",
+};
+
+function abrirBuscaViva(fonte) {
+  const termo = document.getElementById("input-busca-viva").value.trim();
+  const base = termo ? `${termo} concurso público federal edital` : "concurso público federal edital 2026 inscrições abertas";
+  const dominio = SITES_BUSCA_VIVA[fonte];
+  const consulta = dominio ? `${base} site:${dominio}` : base;
+  window.open(`https://www.google.com/search?q=${encodeURIComponent(consulta)}`, "_blank", "noopener");
+}
+
+function inicializarBuscaViva() {
+  document.getElementById("busca-viva-links").addEventListener("click", (e) => {
+    const fonte = e.target.dataset.fonte;
+    if (!fonte) return;
+    abrirBuscaViva(fonte);
+  });
+  document.getElementById("input-busca-viva").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      abrirBuscaViva("google");
+    }
+  });
+}
+
 function inicializarBuscadorEditais() {
   renderEditaisAtualizado();
   renderEditaisLista();
+  inicializarBuscaViva();
 
   document.getElementById("input-busca-edital").addEventListener("input", (e) => {
     filtroTextoEdital = e.target.value;

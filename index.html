@@ -44,6 +44,20 @@
       <h2>Buscar Editais</h2>
       <p class="empty-state" style="padding:0 0 10px;">Concursos federais com edital publicado, levantados por pesquisa — filtre por nome e veja prazos, banca e link oficial.</p>
 
+      <div class="panel">
+        <h3>Busca ao vivo</h3>
+        <p class="empty-state" style="padding:0 0 10px;">O app não consegue acessar sites externos ao vivo (bloqueio de segurança do navegador), mas este atalho abre a pesquisa já pronta direto no site, em uma aba nova.</p>
+        <div class="editais-toolbar">
+          <input type="text" id="input-busca-viva" placeholder="Ex: analista, tribunal, concurso nível médio...">
+        </div>
+        <div class="btn-row" id="busca-viva-links">
+          <button type="button" data-fonte="google">Google</button>
+          <button type="button" class="btn-ghost" data-fonte="jcconcursos">JC Concursos</button>
+          <button type="button" class="btn-ghost" data-fonte="pciconcursos">PCI Concursos</button>
+          <button type="button" class="btn-ghost" data-fonte="folhadirigida">Folha Dirigida</button>
+        </div>
+      </div>
+
       <div class="editais-toolbar">
         <input type="text" id="input-busca-edital" placeholder="Buscar por órgão, cargo ou banca...">
         <div class="filtro-status" id="filtro-status-edital">
