@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => mudarView(btn.dataset.view));
   });
 
+  inicializarBuscadorEditais();
   inicializarDisciplinas();
   inicializarImportadorEdital();
   inicializarCronograma();

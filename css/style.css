@@ -100,6 +100,9 @@ button:hover { background: var(--primary-dark); }
 .btn-danger { background: var(--danger); }
 .btn-danger:hover { background: #c5423d; }
 
+.btn-ghost { background: transparent; color: var(--primary); border: 1px solid var(--border); }
+.btn-ghost:hover { background: var(--bg); }
+
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
 .btn-file {
@@ -220,6 +223,30 @@ button:hover { background: var(--primary-dark); }
   font-size: 13px;
 }
 .icon-btn:hover { color: var(--danger); background: transparent; }
+
+.editais-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; }
+.editais-toolbar input[type="text"] { flex: 1; min-width: 200px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; }
+.filtro-status { display: flex; gap: 6px; }
+.filtro-status button { background: var(--panel); color: var(--muted); border: 1px solid var(--border); font-weight: 600; }
+.filtro-status button.active { background: var(--text); color: var(--panel); border-color: var(--text); }
+.editais-atualizado { font-size: 12px; color: var(--muted); margin: 8px 0 16px; }
+.editais-grid { display: flex; flex-direction: column; gap: 10px; }
+.edital-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+.edital-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.edital-card__head h4 { margin: 0; font-size: 16px; }
+.edital-card__cargo { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.status-pill { flex-shrink: 0; display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
+.status-pill--aberto { background: #e3f0ea; color: var(--success); }
+.status-pill--previsto { background: #fbeecd; color: #a5720a; }
+.edital-card__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0; }
+.edital-card__campo { font-size: 12.5px; }
+.edital-card__campo .rotulo { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 2px; }
+.edital-card__campo .valor { font-size: 12.5px; }
+.edital-card__obs { font-size: 12.5px; color: var(--muted); background: var(--bg); border-radius: 6px; padding: 8px 10px; margin: 10px 0; }
+.edital-card__acoes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.edital-card__acoes button { font-size: 12.5px; padding: 7px 12px; }
+.editais-nota { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-top: 18px; }
+.editais-nota a { color: var(--primary-dark); }
 
 .edital-textarea {
   width: 100%;

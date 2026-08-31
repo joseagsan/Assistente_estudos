@@ -11,6 +11,7 @@
   <nav class="sidebar">
     <h1>📚 Assistente</h1>
     <button class="nav-btn active" data-view="dashboard">Painel</button>
+    <button class="nav-btn" data-view="buscar-editais">Buscar Editais</button>
     <button class="nav-btn" data-view="disciplinas">Edital / Disciplinas</button>
     <button class="nav-btn" data-view="cronograma">Cronograma</button>
     <button class="nav-btn" data-view="flashcards">Flashcards</button>
@@ -37,6 +38,31 @@
         <h3>Progresso por disciplina</h3>
         <div id="dashboard-progresso"></div>
       </div>
+    </section>
+
+    <section id="view-buscar-editais" class="view">
+      <h2>Buscar Editais</h2>
+      <p class="empty-state" style="padding:0 0 10px;">Concursos federais com edital publicado, levantados por pesquisa — filtre por nome e veja prazos, banca e link oficial.</p>
+
+      <div class="editais-toolbar">
+        <input type="text" id="input-busca-edital" placeholder="Buscar por órgão, cargo ou banca...">
+        <div class="filtro-status" id="filtro-status-edital">
+          <button type="button" data-status="todos" class="active">Todos</button>
+          <button type="button" data-status="aberto">Abertos</button>
+          <button type="button" data-status="previsto">Previstos</button>
+        </div>
+      </div>
+      <p class="editais-atualizado" id="editais-atualizado"></p>
+
+      <div id="editais-lista" class="editais-grid"></div>
+
+      <p class="editais-nota">
+        Esta lista é um retrato pontual, levantado por pesquisa e não uma busca ao vivo — o app não tem acesso a sites externos em tempo real.
+        Peça para eu atualizá-la sempre que quiser dados mais recentes. Para acompanhamento contínuo, sites como
+        <a href="https://jcconcursos.com.br/concursos/nacional" target="_blank" rel="noopener">JC Concursos</a> e
+        <a href="https://folha.qconcursos.com/n/concursos-publicos-abertos" target="_blank" rel="noopener">Folha Dirigida</a>
+        atualizam diariamente.
+      </p>
     </section>
 
     <section id="view-disciplinas" class="view">
@@ -143,6 +169,7 @@
 </div>
 
 <script src="js/storage.js"></script>
+<script src="js/editais.js"></script>
 <script src="js/dashboard.js"></script>
 <script src="js/disciplinas.js"></script>
 <script src="js/cronograma.js"></script>
