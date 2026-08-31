@@ -12,6 +12,7 @@ function criarDadosIniciais() {
       horaInicial: "19:00",
       dataProva: null,
     },
+    seeds: {},
   };
 }
 
@@ -21,6 +22,7 @@ function carregarDados() {
     if (!raw) return criarDadosIniciais();
     const dados = Object.assign(criarDadosIniciais(), JSON.parse(raw));
     dados.planoConfig = Object.assign(criarDadosIniciais().planoConfig, dados.planoConfig || {});
+    dados.seeds = dados.seeds || {};
     return dados;
   } catch (e) {
     console.error("Falha ao carregar dados, iniciando do zero.", e);

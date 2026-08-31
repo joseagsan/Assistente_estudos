@@ -1,3 +1,48 @@
+function semearDisciplinasCamaraBoaVista() {
+  if (DADOS.seeds.camaraBoaVista) return;
+  DADOS.seeds.camaraBoaVista = true;
+
+  const NOVAS_DISCIPLINAS = [
+    { nome: "Língua Portuguesa", cor: "#1f6f54", topicos: [
+      "Compreensão e interpretação de textos", "Ortografia oficial", "Acentuação gráfica",
+      "Emprego das classes de palavras", "Concordância verbal e nominal", "Regência verbal e nominal",
+      "Pontuação", "Redação de correspondências oficiais",
+    ]},
+    { nome: "Matemática e Raciocínio Lógico", cor: "#2f6fb3", topicos: [
+      "Operações com números reais", "Razão e proporção", "Porcentagem",
+      "Regra de três simples e composta", "Estruturas lógicas", "Lógica de argumentação",
+    ]},
+    { nome: "Noções de Informática", cor: "#a5720a", topicos: [
+      "Conceitos básicos de hardware e software", "Editores de texto e planilhas eletrônicas",
+      "Internet e correio eletrônico", "Noções de segurança da informação",
+    ]},
+    { nome: "Atualidades e Conhecimentos Gerais", cor: "#7a4fc9", topicos: [
+      "Panorama político, social e econômico do Brasil",
+      "Aspectos históricos, geográficos e culturais de Roraima e Boa Vista",
+    ]},
+    { nome: "Legislação Institucional", cor: "#c2493c", topicos: [
+      "Lei Orgânica do Município de Boa Vista", "Regimento Interno da Câmara Municipal de Boa Vista",
+      "Estatuto dos Servidores Públicos do Município de Boa Vista",
+    ]},
+    { nome: "Direito Constitucional e Administrativo", cor: "#3c8f8f", topicos: [
+      "Princípios da Administração Pública", "Organização dos Poderes", "Direitos e garantias fundamentais",
+    ]},
+  ];
+
+  NOVAS_DISCIPLINAS.forEach((d) => {
+    const existente = DADOS.disciplinas.find((x) => x.nome.trim().toLowerCase() === d.nome.trim().toLowerCase());
+    const topicosNovos = d.topicos.map((nome) => ({ id: novoId(), nome, status: "nao_iniciado" }));
+    if (existente) {
+      const nomesExistentes = new Set(existente.topicos.map((t) => t.nome.trim().toLowerCase()));
+      topicosNovos.forEach((t) => { if (!nomesExistentes.has(t.nome.toLowerCase())) existente.topicos.push(t); });
+    } else {
+      DADOS.disciplinas.push({ id: novoId(), nome: d.nome, cor: d.cor, topicos: topicosNovos });
+    }
+  });
+
+  salvarDados();
+}
+
 const STATUS_TOPICO = {
   nao_iniciado: { label: "Não iniciado", peso: 0 },
   estudando: { label: "Estudando", peso: 0.4 },

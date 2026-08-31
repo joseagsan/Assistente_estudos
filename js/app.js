@@ -16,6 +16,8 @@ function renderTudo() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  semearDisciplinasCamaraBoaVista();
+
   document.querySelectorAll(".nav-btn").forEach((btn) => {
     btn.addEventListener("click", () => mudarView(btn.dataset.view));
   });
