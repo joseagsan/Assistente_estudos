@@ -238,6 +238,7 @@ button:hover { background: var(--primary-dark); }
 .status-pill { flex-shrink: 0; display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
 .status-pill--aberto { background: #e3f0ea; color: var(--success); }
 .status-pill--previsto { background: #fbeecd; color: #a5720a; }
+.status-pill--encerrado { background: var(--bg); color: var(--muted); }
 .edital-card__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0; }
 .edital-card__campo { font-size: 12.5px; }
 .edital-card__campo .rotulo { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 2px; }

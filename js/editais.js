@@ -2,6 +2,7 @@ const EDITAIS_ATUALIZADO_EM = "2026-08-31";
 const EDITAIS_CURADOS = [
   {
     orgao: "Transpetro",
+    regiao: "Federal",
     cargo: "Diversos cargos — Quadro de Terra e Quadro de Mar",
     nivel: "Médio/Técnico e Superior",
     vagas: "281 imediatas + 3.890 cadastro de reserva",
@@ -15,6 +16,7 @@ const EDITAIS_CURADOS = [
   },
   {
     orgao: "TCDF — Tribunal de Contas do Distrito Federal",
+    regiao: "Federal",
     cargo: "Analista Administrativo de Controle Externo (ANACE)",
     nivel: "Superior (qualquer área)",
     vagas: "10 imediatas + cadastro de reserva",
@@ -28,6 +30,7 @@ const EDITAIS_CURADOS = [
   },
   {
     orgao: "Polícia Federal",
+    regiao: "Federal",
     cargo: "Agente, Escrivão, Delegado, Papiloscopista",
     nivel: "Superior",
     vagas: "2.000 imediatas (até 3.000 com cadastro de reserva)",
@@ -42,6 +45,7 @@ const EDITAIS_CURADOS = [
   },
   {
     orgao: "Receita Federal",
+    regiao: "Federal",
     cargo: "Auditor-Fiscal / Analista Tributário",
     nivel: "Superior",
     vagas: "146 vagas autorizadas",
@@ -56,6 +60,7 @@ const EDITAIS_CURADOS = [
   },
   {
     orgao: "INSS",
+    regiao: "Federal",
     cargo: "Técnico do Seguro Social",
     nivel: "Médio",
     vagas: "3.000 a 5.000 previstas",
@@ -68,10 +73,73 @@ const EDITAIS_CURADOS = [
     link: "https://www.gov.br/inss/pt-br",
     fonte: "https://www.spesedu.com.br/concursos-publicos-2026",
   },
+  {
+    orgao: "CAER — Companhia de Águas e Esgotos de Roraima",
+    regiao: "Roraima (RR)",
+    cargo: "Diversos cargos (médio, técnico e superior)",
+    nivel: "Médio, Técnico e Superior",
+    vagas: "105 imediatas + 105 cadastro de reserva",
+    banca: "Fundação Ajuri",
+    salario: "R$ 3.036,00 a R$ 4.554,00",
+    inscricoesFim: "2026-08-31",
+    prova: "2026-11-22",
+    status: "aberto",
+    observacao: "Inscrições encerram hoje — confirme o horário limite direto no site da banca antes de perder o prazo.",
+    link: "https://www.ajuri.org.br/concursos",
+    fonte: "https://blog.grancursosonline.com.br/concurso-caer-rr/",
+  },
+  {
+    orgao: "CBM-RR — Corpo de Bombeiros Militar de Roraima",
+    regiao: "Roraima (RR)",
+    cargo: "Soldado e Oficial Bombeiro Militar",
+    nivel: "Médio (Soldado) e Superior (Oficial)",
+    vagas: "200 imediatas + 100 cadastro de reserva",
+    banca: "IDECAN",
+    salario: "R$ 3.082,30 a R$ 12.727,23",
+    inscricoesFim: "2026-08-24",
+    prova: "2026-09-27",
+    status: "encerrado",
+    observacao: "Inscrições já encerradas (24/08). A prova ainda está prevista para 27/09 — vale acompanhar para um possível novo edital ou cadastro de reserva.",
+    link: "https://idecan.org.br/",
+    fonte: "https://blog.grancursosonline.com.br/concurso-bombeiros-rr-edital-publicado-2026/",
+  },
+  {
+    orgao: "PM-RR — Polícia Militar de Roraima (Oficial)",
+    regiao: "Roraima (RR)",
+    cargo: "Oficial PM",
+    nivel: "Superior",
+    vagas: "a definir",
+    banca: "UERR (organizadora indicada)",
+    salario: "a confirmar no edital",
+    inscricoesFim: null,
+    prova: null,
+    status: "previsto",
+    observacao: "Edital ainda não publicado; a imprensa local aponta a UERR como organizadora.",
+    link: "https://www.uerr.edu.br/",
+    fonte: "https://folha.qconcursos.com/n/concursos-roraima",
+  },
+  {
+    orgao: "Câmara Municipal de Boa Vista (RR)",
+    regiao: "Roraima (RR)",
+    cargo: "Cargos efetivos (a definir)",
+    nivel: "a definir",
+    vagas: "a definir",
+    banca: "a definir",
+    salario: "a confirmar no edital",
+    inscricoesFim: null,
+    prova: null,
+    status: "previsto",
+    observacao: "Comissão organizadora já formada; edital ainda não publicado.",
+    link: "https://www.camaraboavista.rr.gov.br/",
+    fonte: "https://blog.grancursosonline.com.br/concursos-roraima-rr/",
+  },
 ];
 
 let filtroTextoEdital = "";
 let filtroStatusEdital = "todos";
+let filtroRegiaoEdital = "todos";
+
+const STATUS_EDITAL_LABEL = { aberto: "Inscrições abertas", previsto: "Previsto", encerrado: "Inscrições encerradas" };
 
 function formatarDataBr(iso) {
   if (!iso) return null;
@@ -83,9 +151,10 @@ function editaisFiltrados() {
   const termo = filtroTextoEdital.trim().toLowerCase();
   return EDITAIS_CURADOS.filter((e) => {
     const passaStatus = filtroStatusEdital === "todos" || e.status === filtroStatusEdital;
+    const passaRegiao = filtroRegiaoEdital === "todos" || e.regiao === filtroRegiaoEdital;
     const alvo = `${e.orgao} ${e.cargo} ${e.banca}`.toLowerCase();
     const passaTermo = !termo || alvo.includes(termo);
-    return passaStatus && passaTermo;
+    return passaStatus && passaRegiao && passaTermo;
   });
 }
 
@@ -109,9 +178,9 @@ function renderEditaisLista() {
       <div class="edital-card__head">
         <div>
           <h4>${escapeHtml(e.orgao)}</h4>
-          <div class="edital-card__cargo">${escapeHtml(e.cargo)}</div>
+          <div class="edital-card__cargo">${escapeHtml(e.cargo)} · ${escapeHtml(e.regiao)}</div>
         </div>
-        <span class="status-pill status-pill--${e.status}">${e.status === "aberto" ? "Inscrições abertas" : "Previsto"}</span>
+        <span class="status-pill status-pill--${e.status}">${STATUS_EDITAL_LABEL[e.status] || e.status}</span>
       </div>
       <div class="edital-card__grid">
         <div class="edital-card__campo"><span class="rotulo">Nível</span><span class="valor">${escapeHtml(e.nivel)}</span></div>
@@ -176,6 +245,13 @@ function inicializarBuscadorEditais() {
     if (e.target.tagName !== "BUTTON") return;
     filtroStatusEdital = e.target.dataset.status;
     document.querySelectorAll("#filtro-status-edital button").forEach((b) => b.classList.toggle("active", b === e.target));
+    renderEditaisLista();
+  });
+
+  document.getElementById("filtro-regiao-edital").addEventListener("click", (e) => {
+    if (e.target.tagName !== "BUTTON") return;
+    filtroRegiaoEdital = e.target.dataset.regiao;
+    document.querySelectorAll("#filtro-regiao-edital button").forEach((b) => b.classList.toggle("active", b === e.target));
     renderEditaisLista();
   });
 
