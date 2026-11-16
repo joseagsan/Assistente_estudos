@@ -74,7 +74,7 @@ A cobrança muda com o cargo. Para a Câmara de Boa Vista, o app só traz o tóp
 | Inciso | Regra | Pegadinha |
 |---|---|---|
 | XXXV | Lei não excluirá da apreciação do Judiciário **lesão ou ameaça** a direito | Não exige esgotar a via administrativa (salvo justiça desportiva, art. 217 §1º ⚠️) |
-| XXXVI | A lei não prejudicará **direito adquirido, ato jurídico perfeito e coisa julgada** | Vale contra a **lei**, não contra a emenda constitucional: o STF não reconhece direito adquirido contra a CF originária |
+| XXXVI | A lei não prejudicará **direito adquirido, ato jurídico perfeito e coisa julgada** | **Não** protege a "expectativa de direito". Para o STF não há direito adquirido a **regime jurídico** (ex.: plano de carreira, regras de aposentadoria ainda não cumpridas). A SV/Súmula 654 diz que o próprio ente que editou a lei **não** pode invocar a irretroatividade contra o cidadão |
 | XXXVII | Não há juízo ou **tribunal de exceção** | Foro por prerrogativa **não** é tribunal de exceção |
 | XXXVIII | Júri: **plenitude de defesa**, **sigilo das votações**, **soberania dos veredictos**, competência para **crimes dolosos contra a vida** | "ampla defesa" no lugar de "plenitude de defesa" |
 | XXXIX | Não há crime sem lei anterior, nem pena sem prévia cominação legal | |
@@ -94,7 +94,7 @@ A cobrança muda com o cargo. Para a Câmara de Boa Vista, o app só traz o tóp
 | LX | Publicidade dos atos processuais; a lei pode restringi-la se a **intimidade ou o interesse social** exigirem | |
 | LXI | Prisão **só em flagrante ou por ordem escrita e fundamentada de autoridade judiciária competente**, **salvo** transgressão militar ou crime propriamente militar | "ordem de qualquer autoridade" |
 | LXII | Prisão comunicada **imediatamente** ao **juiz competente** e à **família** ou pessoa indicada | |
-| LXIII | **Direito de permanecer calado**, assistência da família e de advogado | |
+| LXIII | **Direito de permanecer calado**, assistência da família **e** de advogado | O STF admite o **direito de mentir** para não se autoincriminar, mas isso **não** alcança quem atribui a si **falsa identidade** para esconder antecedentes |
 | LXIV | Direito à **identificação dos responsáveis** pela prisão ou interrogatório policial | |
 | LXV | Prisão ilegal será **relaxada** imediatamente pela autoridade judiciária | |
 | LXVI | Ninguém será levado à prisão ou nela mantido quando a lei admitir **liberdade provisória, com ou sem fiança** | |
@@ -116,7 +116,7 @@ A cobrança muda com o cargo. Para a Câmara de Boa Vista, o app só traz o tóp
 
 **Mnemônico:** *imprescritível = só racismo e grupos armados (os dois "RG")*. Todos os seis são inafiançáveis. A **tortura, o tráfico, o terrorismo e os hediondos** vêm no mesmo inciso XLIII e **não** são imprescritíveis, que é a pegadinha clássica (inclusive a que apareceu em questão da PM-PB, citada nos resultados).
 
-⚠️ O STF já equiparou a **injúria racial** ao racismo para fins de imprescritibilidade (HC 154.248, 2021). Confirme no portal do STF.
+O STF já equiparou a **injúria racial** ao racismo para fins de imprescritibilidade (HC 154.248), e a **Lei 14.532/2023** a tipificou como racismo. Também enquadrou a homofobia e a transfobia na Lei do Racismo (ADO 26 e MI 4.733). O indulto também é vedado para os crimes do inciso XLIII (ADI 2.795). *(Pontos conferidos na apostila Gran/Luciano Dutra, p. 45–47.)*
 
 ### 3.6 Extradição
 
