@@ -14,6 +14,8 @@ Cada verbo ou locução verbal forma uma oração, e cada oração tem o seu pr�
 
 - *Os alunos **querem estudar** e **esperam passar**.* → duas locuções verbais = duas orações.
 - Locução verbal (`querem estudar`) conta como **um** verbo só. O sujeito concorda com o auxiliar (`querem`).
+- **Não achou verbo? Procure o verbo subentendido (zeugma).** Em poemas e frases paralelas, o verbo aparece uma vez só e fica implícito na oração seguinte.
+  - *Em tristes sombras **morre** a formosura, / Em contínuas tristezas a alegria.* → *a alegria [morre] em contínuas tristezas* → sujeito: **a alegria**.
 
 ### Passo 2 — Pergunte "Quem?" ou "O quê?" antes do verbo
 
@@ -137,6 +139,7 @@ Com verbos **causativos** (`mandar, deixar, fazer`) e **sensitivos** (`ver, ouvi
 
 - *É importante **estudar todos os dias**.* → sujeito: oração reduzida de infinitivo (`Isso é importante`).
 - *Convém **que todos cheguem cedo**.* → oração subordinada substantiva **subjetiva**.
+- ***Quem não vê bem uma palavra** não pode ver bem uma alma.* → frase que começa com **"Quem..."** sem ser pergunta: o sujeito do segundo verbo é a oração inteira (*Essa pessoa não pode ver bem uma alma*). Não é oração sem sujeito.
 
 ---
 
@@ -149,7 +152,9 @@ Com verbos **causativos** (`mandar, deixar, fazer`) e **sensitivos** (`ver, ouvi
 3. **Termo plural dentro de adjunto confunde a concordância.** *O conjunto de normas **foi** aprovado.* (núcleo: `conjunto`.)
 4. **Verbo "haver" com sujeito inventado.** *Havia muitas pessoas* ≠ *Existiam muitas pessoas*. Com `haver`, o verbo fica no singular; com `existir`, concorda.
 5. **Pontuação separando sujeito do verbo.** Não separe sujeito e verbo com vírgula (erro de pontuação), a menos que haja um termo intercalado entre vírgulas: *Os alunos, **cansados**, saíram.*
-6. **Sujeito pede pronome do caso reto** (`eu, tu, ele, nós, vós, eles`). Por isso o certo é `trouxe o livro para **eu** ler` (`eu` é sujeito de `ler`) e o errado é `para mim ler`. Já em `entre **mim** e você`, `mim` não é sujeito: é complemento da preposição `entre`, então o oblíquo é o correto.
+6. **Preposição depois do verbo não o torna transitivo indireto.** *Resultados semelhantes **aparecem** em quadros de demência.* → "aparecer" é intransitivo; "em quadros de demência" é adjunto adverbial de lugar. Pergunte se o verbo **exige** o termo ou se o termo só indica uma circunstância.
+7. **Sujeito separado do verbo por termo intercalado.** *As palavras, **felizmente**, não têm dono.* → corte o intercalado: *As palavras não têm dono*. "dono" (singular) não concorda com "têm" (plural), então é objeto direto.
+8. **Sujeito pede pronome do caso reto** (`eu, tu, ele, nós, vós, eles`). Por isso o certo é `trouxe o livro para **eu** ler` (`eu` é sujeito de `ler`) e o errado é `para mim ler`. Já em `entre **mim** e você`, `mim` não é sujeito: é complemento da preposição `entre`, então o oblíquo é o correto.
 
 ---
 

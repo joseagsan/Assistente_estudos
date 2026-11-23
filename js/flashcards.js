@@ -136,3 +136,42 @@ function inicializarFlashcards() {
     renderTudo();
   });
 }
+
+function semearFlashcardsSujeito() {
+  if (DADOS.seeds.flashcardsSujeito) return;
+  DADOS.seeds.flashcardsSujeito = true;
+
+  let portugues = DADOS.disciplinas.find((d) => d.nome.trim().toLowerCase() === "língua portuguesa");
+  if (!portugues) {
+    portugues = { id: novoId(), nome: "Língua Portuguesa", cor: "#1f6f54", topicos: [] };
+    DADOS.disciplinas.push(portugues);
+  }
+
+  const CARDS = [
+    ["Qual é o teste decisivo para achar o sujeito?", "Teste da concordância: troque singular/plural; se o verbo acompanhar, é o sujeito."],
+    ["\"Quem não vê bem uma palavra não pode ver bem uma alma.\" Qual é o sujeito de \"pode ver\"?", "A oração \"Quem não vê bem uma palavra\" (sujeito oracional). Teste: \"Essa pessoa não pode ver...\""],
+    ["Frase que começa com \"Quem...\" (sem ser pergunta) costuma ter que tipo de sujeito?", "Sujeito oracional: a oração \"Quem...\" é o sujeito do outro verbo. Ex.: \"Quem estuda passa.\""],
+    ["\"As palavras, felizmente, não têm dono.\" Sujeito de \"têm\"?", "\"As palavras\". \"dono\" (singular) não concorda com \"têm\" (plural): é objeto direto."],
+    ["\"Dizem que os escritores são donos das palavras.\" Sujeito de \"Dizem\"?", "Indeterminado: 3ª pessoa do plural sem referente. \"os escritores\" é sujeito de \"são\"."],
+    ["\"Alugaram-se muitas salas\" é oração sem sujeito?", "Não. VTD + se = voz passiva sintética; sujeito: \"muitas salas\" (= muitas salas foram alugadas)."],
+    ["\"Faz dez anos que a empresa faliu\": o que é \"Faz dez anos\"?", "Oração sem sujeito: \"fazer\" indicando tempo decorrido é impessoal (fica no singular)."],
+    ["\"Choveram críticas ao projeto\" tem sujeito?", "Sim, \"críticas\": \"chover\" em sentido figurado deixa de ser impessoal."],
+    ["Substantivo + adjetivo (\"Resultados semelhantes\") forma sujeito composto?", "Não. Composto exige dois núcleos ou mais. O adjetivo é adjunto adnominal; sujeito simples."],
+    ["Preposição depois do verbo o torna transitivo indireto?", "Não. Se o termo só indica circunstância (lugar, tempo), é adjunto adverbial e o verbo pode ser intransitivo. Ex.: aparecer em quadros de demência."],
+    ["\"Em contínuas tristezas a alegria\" (Gregório de Matos): função de \"a alegria\"?", "Sujeito posposto do verbo subentendido \"morre\" (zeugma): a alegria [morre] em contínuas tristezas."],
+    ["Verso sem verbo na questão: o que fazer?", "Procurar o verbo no verso anterior (zeugma) e pôr na ordem direta."],
+  ];
+
+  CARDS.forEach(([frente, verso]) => {
+    DADOS.flashcards.push({
+      id: novoId(),
+      disciplinaId: portugues.id,
+      frente,
+      verso,
+      intervaloIndex: 0,
+      proximaRevisao: hojeISO(),
+    });
+  });
+
+  salvarDados();
+}

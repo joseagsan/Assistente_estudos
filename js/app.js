@@ -17,6 +17,7 @@ function renderTudo() {
 
 document.addEventListener("DOMContentLoaded", () => {
   semearDisciplinasCamaraBoaVista();
+  semearFlashcardsSujeito();
 
   document.querySelectorAll(".nav-btn").forEach((btn) => {
     btn.addEventListener("click", () => mudarView(btn.dataset.view));
